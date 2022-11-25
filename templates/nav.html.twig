@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    {# <a class="navbar-brand" href="{{ path('app_home') }}"> #}
-        E-boutik
+     <a class="navbar-brand" href="{{ path('app_home') }}"> 
+        RobyMarket
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -15,13 +15,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_register') }}">
+                   
                         <i class="fa fa-user-plus"></i>
                     </a>
                 </li>
             {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_produit_index') }}">
+                    {# <a class="nav-link" href="{{ path('app_produit_index') }}"> #}
                         {{ app.user.username }}
                     </a>
                 </li>
@@ -40,10 +40,10 @@
                                 
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ path('app_produit_index') }}">
+                         <a class="dropdown-item" href="{{ path('admin') }}"> 
                             Liste
                         </a>
-                        <a class="dropdown-item" href="{{ path('app_admin_produit_new') }}">
+                        {# <a class="dropdown-item" href="{{ path('app_admin_produit_new') }}"> #}
                             Ajouter
                         </a>
                     </div>
@@ -55,10 +55,10 @@
                                 
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ path('app_admin_user_index') }}">
+                        {# <a class="dropdown-item" href="{{ path('app_user_index') }}"> #}
                             Liste
                         </a>
-                        <a class="dropdown-item" href="{{ path('app_admin_user_new') }}">
+                        <a class="dropdown-item" href="{{ path('app_user_new') }}">
                             Ajouter
                         </a>
                     </div>
@@ -69,15 +69,38 @@
                         Commandes
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ path('app_admin_commande_index') }}">
+                        {# <a class="dropdown-item" href="{{ path('app_admin_commande_index') }}"> #}
                             Liste
                         </a>
-                        <a class="dropdown-item" href="{{ path('app_admin_commande_new') }}">
+                        {# <a class="dropdown-item" href="{{ path('app_admin_commande_new') }}"> #}
                             Ajouter
                         </a>
                     </div>
                 </li>
             {% endif %}
+
+              {% if app.user %}
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="user">
+                                            <i class="fa fa-user" aria-hidden="true"></i>
+                                            <span class="caret"></span>
+                                            {# <span class="sr-only">{{ app.username }}</span> #}
+                                        </a>
+                                        <ul class="dropdown-menu user" role="menu" aria-labelledby="user">
+                                            <li>
+                                                 <a href="{{ path('app_user_edit') }}"> 
+                                                    <i class="fa fa-edit" aria-hidden="true"></i> {{ 'menu.user'|trans }}
+                                                </a>
+                                            </li>
+                                            <li class="divider"></li>
+                                            <li>
+                                                {# <a href="{{ path('security_logout') }}"> #}
+                                                    <i class="fa fa-sign-out" aria-hidden="true"></i> {{ 'menu.logout'|trans }}
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                {% endif %}
 
             <li class="nav-item active">
                  <a class="nav-link" href="{{ path('app_panier') }}"> 

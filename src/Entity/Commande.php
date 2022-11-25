@@ -25,7 +25,9 @@ class Commande
     #[ORM\Column(length: 50)]
     private ?string $etat = null;
 
+    
     #[ORM\ManyToOne(inversedBy: 'commandes')]
+    #[ORM\JoinColumn(nullable:false)]
     private ?User $user = null;
 
     #[ORM\OneToMany(mappedBy: 'commande', targetEntity: Detail::class)]
@@ -119,6 +121,7 @@ class Commande
 
         return $this;
     }
+
 
    
 }
