@@ -8,7 +8,9 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
+
 #[ORM\Entity(repositoryClass: ProduitRepository::class)]
+
 class Produit
 {
     #[ORM\Id]
@@ -30,6 +32,8 @@ class Produit
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $photo = null;
+
+
 
     #[ORM\Column(type: Types::DECIMAL, precision: 12, scale: 2)]
     private ?string $prix = null;
