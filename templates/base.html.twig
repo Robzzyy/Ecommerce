@@ -25,14 +25,21 @@
     </head>
     <body>
         <div class="container">
+       {% if app.user %}
             {% block nav %}
                 {{ include("nav.html.twig") }}
             {% endblock %}
+           
+       
 
             {# {{ include("messages.html.twig") }} #}
             <div id="main">
+            
 
             <h1>{% block h1 %}THE PLACE TO BE!!!!{% endblock %}</h1>
+             {% endif %}
+
+             
 
             {% block body %}
                 <p>Ceci est le contenu de la balise <code>block body</code> du fichier 
@@ -42,12 +49,15 @@
                 <p>Bonjour M. {{ nom }}</p>
             {% endblock %}
             
-
+             {% if app.user %}
             <footer>
                 {% block footer %}
                     <p>Ceci est le footer de la page</p>
                 {% endblock %}
+                
             </footer>
+            {% endif %}
+           
         </div>
         </div>
     </body>
