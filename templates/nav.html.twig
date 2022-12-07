@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="container px-4 px-lg-5">
 	<a class="navbar-brand ms-3" href="{{ path('app_home') }}">
 		RobyMarket
 	</a>
@@ -7,10 +8,10 @@
 	</button>
 
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+		<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
 			{% if not app.user %}
 				<li class="nav-item ">
-					<a class="nav-link active" href="{{ path('app_login') }}">
+					<a class="nav-link active" aria-current="page" href="{{ path('app_login') }}">
 						<i class="fa fa-sign-in-alt"></i>
 					</a>
 				</li>
@@ -69,8 +70,7 @@
 			</ul>
 		</li>
 	{% endif %}
-
-	<li class="nav-item active">
+<li class="nav-item active">
 		<a class="nav-link" href="{{ path('app_panier') }}">
 			<i class="fa fa-shopping-cart"></i>
 			<div id="nombre"></div>
@@ -84,4 +84,7 @@
 	<button class="btn btn-outline-success my-2 my-sm-0 mr-2" type="submit">
 		Search
 	</button>
-</form></div></nav>
+</form>
+	</div>
+</div>
+</nav>

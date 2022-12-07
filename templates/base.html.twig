@@ -24,19 +24,25 @@
         {% endblock %}
     </head>
     <body>
-        <div class="container">
+
+        <div class="container-fluid">
+        <div class="row">
+
        {% if app.user %}
             {% block nav %}
                 {{ include("nav.html.twig") }}
             {% endblock %}
-           
-       
-
+            {% block header %}
+                     {{ include("header.html.twig") }}
+                {% endblock %}
+       </div>
+            <div class="container">
             {# {{ include("messages.html.twig") }} #}
             <div id="main">
             
 
-            <h1>{% block h1 %}THE PLACE TO BE!!!!{% endblock %}</h1>
+            
+
              {% endif %}
 
              
@@ -48,18 +54,20 @@
                 <p>Le nombre est {{ nombre }}</p>
                 <p>Bonjour M. {{ nom }}</p>
             {% endblock %}
+             </div>
             
+           
+            </div>
              {% if app.user %}
-            <footer>
+            
+            {% endif %}
+        </div>
+    <footer>
                 {% block footer %}
-                    <p>Ceci est le footer de la page</p>
+                     {{ include("footer.html.twig") }}
                 {% endblock %}
                 
             </footer>
-            {% endif %}
-           
-        </div>
-        </div>
     </body>
 </html>
 

@@ -108,7 +108,7 @@ class PanierController extends AbstractController
 
     /** 
      * @Route("/valider", name="app_panier_valider")
-     * @IsGranted("ROLE_CLIENT")
+    
      */
 
     public function valider(Session $session, ProduitRepository $produitRepository, EntityManagerInterface $em)
